@@ -12,18 +12,19 @@ import pandas as pd
 
 
 def get_user_input(all_data, header):
-    """_summary_
+    """ Gets the user input and checks that the input is a member of the specified data column.
 
     Args:
-        all_data (Pandas DF): _description_
-        header (string): _description_
+        all_data (Pandas DF): Pandas dataframe containing data for user input to be checked against.
+        header (string): The header of the column to check for membership against the user input
 
     Raises:
-        KeyError: _description_
+        KeyError: If user input does not exist in specified header column.
 
     Returns:
-        _type_: _description_
+        string: The valid user input value as an upper case string.
     """    
+
     input_string = input("Please enter a dog breed: ")
     input_string = input_string.upper()
 
@@ -32,7 +33,19 @@ def get_user_input(all_data, header):
     else:
         raise KeyError("Dog breed not found in data. Please try again.")
     
+    
 def show_breed_stats(all_data, breed):
+    """ Calculates and displays the following statistics for a specified breed:
+        - Years where breed is present in the Dataframe.
+        - Total number of registrations for the breed.
+        - Percentage of total yearly registrations contributed by the breed.
+        - Percentage of total overall registrations contributed by the breed.
+        - Month/Year of highest number of registrations for the breed.
+    
+    Args:
+        all_data (Pandas DF): The dataframe containing Year, Month, Breed, and Total (breed registrations that month).
+        breed (string): The user specified breed.
+    """    
 # print years where breed 
     breed_mask = all_data['Breed'] == breed
     breed_years = all_data['Year'][breed_mask].unique()
