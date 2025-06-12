@@ -15,7 +15,7 @@ def get_user_input(data_multi_index, header):
     """ Gets the user input and checks that the input is a member of the specified data column.
 
     Args:
-        all_data (Pandas DF): Pandas dataframe containing data for user input to be checked against.
+        data_multi_index (Pandas DF): Pandas dataframe containing data for user input to be checked against.
         header (string): The header of the column to check for membership against the user input
 
     Raises:
@@ -47,7 +47,7 @@ def show_breed_stats(data_multi_index, breed):
         - Month/Year of highest number of registrations for the breed.
     
     Args:
-        all_data (Pandas DF): The dataframe containing Year, Month, Breed, and Total (breed registrations that month).
+        data_multi_index (Pandas DF): The dataframe with indices: Breed, Year, and Columns: Month, Total (breed registrations that month).
         breed (string): The user specified breed.
     """    
 # print years where breed is present
