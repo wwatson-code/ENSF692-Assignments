@@ -93,6 +93,8 @@ def book_data():
 @app.route("/learn")
 def learn():
     # Return a string the describes one thing you learned in ENSF 692.
-    pass
+    content = "The most valuable thing I learned in this course is all ways you can manipulate data in pandas. This flask tool is pretty cool too."
+    return content
+    
 
 
